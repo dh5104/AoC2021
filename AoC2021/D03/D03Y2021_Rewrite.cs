@@ -6,10 +6,11 @@
     using System.Linq;
     using GlobalUtils;
     using GlobalUtils.Attributes;
+    using GlobalUtils.NumBaseUtils;
     using GlobalUtils.Spatial;
 
-    [Exercise("Day 3: Binary Diagnostic")]
-    class D03Y2021 : FileSelectionConsole, IExercise
+    [Exercise("Day 3: Binary Diagnostic (R)")]
+    class D03Y2021_Rewrite : FileSelectionConsole, IExercise
     {
         public void Execute()
         {
@@ -18,6 +19,7 @@
 
         protected override void Execute(string[] inputLines)
         {
+
             int oneCount = 0;
             string finalBin = "";
             string finalBinInverse = "";
@@ -32,7 +34,7 @@
                     }
                 }
 
-                if (oneCount > inputLines.Length/2)
+                if (oneCount > inputLines.Length / 2)
                 {
                     finalBin += "1";
                     finalBinInverse += "0";
@@ -44,31 +46,18 @@
                 }
             }
 
-            int gamma = 0;
-            int epsilon = 0;
-            for (int i = 0; i < finalBin.Length; i++)
-            {
-                if ('1' == finalBin[finalBin.Length - i - 1])
-                {
-                    gamma += (int)Math.Pow(2, i);
-
-                }
-
-                if ('1' == finalBinInverse[finalBinInverse.Length - i - 1])
-                {
-                    epsilon += (int)Math.Pow(2, i);
-                }
-            }
+            Binary gamma = new Binary(finalBin);
+            Binary epsilon = gamma.Inverse();
 
             Console.WriteLine("Part 1");
             Console.WriteLine($"G{gamma}, e{epsilon}");
-            Console.WriteLine($"Ans: {gamma * epsilon}");
+            Console.WriteLine($"Ans: {gamma.ToDecimal() * epsilon.ToDecimal()}");
 
-            var inputCopy = new List<string>(inputLines);
+            List<string> inputCopy = new List<string>(inputLines);
             for (int i = 0; i < inputCopy[0].Length && 1 < inputCopy.Count; i++)
             {
                 var num1 = inputCopy.Count(l => l[i] == '1');
-                if (num1 >= inputCopy.Count/2.0)
+                if (num1 >= inputCopy.Count / 2.0)
                 {
                     inputCopy = inputCopy.Where(l => l[i] == '1').ToList();
                 }
@@ -82,7 +71,7 @@
 
             Console.WriteLine("Part 2");
             Console.WriteLine($"Ox: {oxygenBin} ({BinToDecimal(oxygenBin)})");
-            
+
             inputCopy = new List<string>(inputLines);
             for (int i = 0; i < inputCopy[0].Length && 1 < inputCopy.Count; i++)
             {

@@ -29,12 +29,6 @@
     <None Update="D03\Data\Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="D04\Data\Part2_allInvalid.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="D04\Data\Part2_allValid.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="D04\Data\Example1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

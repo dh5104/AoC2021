@@ -15,14 +15,13 @@
 
         protected override void Execute(string[] inputLines)
         {
-            List<int> numbers = ParseUtils.InputAsInts(inputLines, false);
             int horz = 0;
             int depth = 0;
             foreach (string line in inputLines)
             {
-                var a = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                int distance = int.Parse(a[1]);
-                switch(a[0])
+                string[] parts = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                int distance = int.Parse(parts[1]);
+                switch(parts[0])
                 {
                     case "forward":
                         horz += distance;
@@ -44,14 +43,13 @@
             int aim = 0;
             foreach (string line in inputLines)
             {
-                var a = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                int distance = int.Parse(a[1]);
-                switch (a[0])
+                string[] parts = line.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                int distance = int.Parse(parts[1]);
+                switch (parts[0])
                 {
                     case "forward":
                         horz += distance;
                         depth += (distance * aim);
-
                         break;
                     case "down":
                         aim += distance;
@@ -64,7 +62,6 @@
 
             Console.WriteLine($"Part 2: Horizontal: {horz}, Depth: {depth}, Aim: {aim}");
             Console.WriteLine($"Answer: {horz * depth}");
-            Console.WriteLine($" rules valid for part 2");
         }
     }
 }
