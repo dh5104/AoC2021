@@ -50,9 +50,6 @@
     <None Update="D07\Data\Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="D06\Data\Example2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="D06\Data\Example1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
