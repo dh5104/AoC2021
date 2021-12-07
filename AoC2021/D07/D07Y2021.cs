@@ -6,7 +6,7 @@
     using GlobalUtils;
     using GlobalUtils.Attributes;
 
-    [Exercise("Day 7: ")]
+    [Exercise("Day 7: The Treachery of Whales")]
     class D07Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()
@@ -22,7 +22,7 @@
                 if (!string.IsNullOrWhiteSpace(line))
                 {
                     string[] parts = line.Split(",", StringSplitOptions.RemoveEmptyEntries);
-                    foreach(string part in parts)
+                    foreach (string part in parts)
                     {
                         numbers.Add(int.Parse(part));
                     }
@@ -45,13 +45,17 @@
 
 
             Console.WriteLine("Part 1");
-            Console.WriteLine($"");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Ans: {numbers2.Values.Min()}");
+            Console.ResetColor();
+            Console.WriteLine($"_______________________________________");
 
             Dictionary<int, int> numbers3 = new Dictionary<int, int>();
             Dictionary<int, int> costs = new Dictionary<int, int>();
             int lowestTotalCost = int.MaxValue;
-            for (int i = min; i <= max; i++)
+
+            // start at the midpoint and head in both directions.
+            for (int i = (min + max) / 2; i <= max && i >= min; i++)
             {
                 int fuelCost = 0;
                 foreach (int number in numbers)
@@ -59,16 +63,39 @@
                     int difference = System.Math.Abs(number - i);
                     if (!costs.ContainsKey(difference))
                     {
-                        int thisCost = 0;
-                        for (int j = 1; j <= difference; j++)
-                        {
-                            thisCost += j;
-                        }
-
-                        costs[difference] = thisCost;
+                        // sum of consecutive numbers is n(1 + n)/2
+                        // which replaces that silly loop to add it up.
+                        costs[difference] = difference * (difference + 1) / 2;
                     }
 
                     fuelCost += costs[difference];
+                    // if it's already higher than the current lowest cost, just move on.
+                    if (fuelCost > lowestTotalCost)
+                    {
+                        break;
+                    }
+                }
+
+                numbers3[i] = fuelCost;
+                if (fuelCost < lowestTotalCost)
+                {
+                    lowestTotalCost = fuelCost;
+                }
+
+                fuelCost = 0;
+                foreach (int number in numbers)
+                {
+                    int difference = System.Math.Abs(number + i);
+                    if (!costs.ContainsKey(difference))
+                    {
+                        // sum of consecutive numbers is n(1 + n)/2
+                        // which replaces that silly loop to add it up.
+                        costs[difference] = difference * (difference + 1) / 2;
+                    }
+
+                    fuelCost += costs[difference];
+
+                    // if it's already higher than the current lowest cost, just move on.
                     if (fuelCost > lowestTotalCost)
                     {
                         break;
@@ -81,9 +108,11 @@
                     lowestTotalCost = fuelCost;
                 }
             }
+
             Console.WriteLine("Part 2");
-            Console.WriteLine($"");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Ans: {numbers3.Values.Min()}");
+            Console.ResetColor();
         }
     }
 }

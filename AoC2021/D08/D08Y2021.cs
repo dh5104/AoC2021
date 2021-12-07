@@ -27,12 +27,15 @@
             }
 
             Console.WriteLine("Part 1");
-            Console.WriteLine($"");
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Ans: ");
+            Console.ResetColor();
+            Console.WriteLine($"_______________________________________");
 
-            Console.WriteLine("Part 1");
-            Console.WriteLine($"");
+            Console.WriteLine("Part 2");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"Ans: ");
+            Console.ResetColor();
         }
     }
 }
