@@ -25,6 +25,19 @@ namespace GlobalUtils.Spatial
             return grid;
         }
 
+        public static void PrintGrid<T>(List<List<T>> points) where T : GenericPoint
+        {
+            // assumes a fully populated square grid, meaning all the lines have the same contents.
+            for(int y = 0; y < points.Count; y++)
+            {
+                for (int x = 0; x < points[y].Count; x++)
+                {
+                    Console.Write(points[y][x].ToString());
+                }
+                Console.WriteLine();
+            }
+        }
+
         public static void PrintGrid<T>(Dictionary<string, T> points) where T : GenericPoint
         {
             int maxX = points.Values.Max(t => t.X);
