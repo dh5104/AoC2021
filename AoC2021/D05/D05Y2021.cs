@@ -7,7 +7,7 @@
     using GlobalUtils.Attributes;
     using GlobalUtils.Spatial;
 
-    [Exercise("Day 5: Hydrothermal Venture")]
+    [Exercise("Day 05: Hydrothermal Venture")]
     class D05Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()

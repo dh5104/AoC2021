@@ -9,7 +9,7 @@
     using GlobalUtils.Spatial;
     using Utils._2021.GameConsole;
 
-    [Exercise("Day 9: Smoke Basin")]
+    [Exercise("Day 09: Smoke Basin")]
     class D09Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()

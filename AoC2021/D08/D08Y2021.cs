@@ -7,7 +7,7 @@
     using GlobalUtils.Attributes;
     using Utils._2021.GameConsole;
 
-    [Exercise("Day 8: Seven Segment Search")]
+    [Exercise("Day 08: Seven Segment Search")]
     class D08Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()

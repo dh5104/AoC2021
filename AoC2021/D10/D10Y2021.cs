@@ -94,7 +94,7 @@
                     ////        break;
                     ////}
 
-                    Console.WriteLine($"{originalLine} | {workingLine} : {part1Score}");
+                    Debug.WriteLine($"{originalLine} | {workingLine} : {part1Score}");
                 }
                 else
                 {
@@ -121,7 +121,7 @@
                         }
                     }
                     part2LineScores.Add(thisScore);
-                    Console.WriteLine($"{originalLine} | {workingLine} === {thisScore}");
+                    Debug.WriteLine($"{originalLine} | {workingLine} === {thisScore}");
                 }
             }
 

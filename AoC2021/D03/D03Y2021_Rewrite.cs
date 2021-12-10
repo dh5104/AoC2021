@@ -9,7 +9,7 @@
     using GlobalUtils.NumBaseUtils;
     using GlobalUtils.Spatial;
 
-    [Exercise("Day 3: Binary Diagnostic (R)")]
+    [Exercise("Day 03: Binary Diagnostic (R)")]
     class D03Y2021_Rewrite : FileSelectionConsole, IExercise
     {
         public void Execute()

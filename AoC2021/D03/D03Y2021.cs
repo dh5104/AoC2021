@@ -8,7 +8,7 @@
     using GlobalUtils.Attributes;
     using GlobalUtils.Spatial;
 
-    [Exercise("Day 3: Binary Diagnostic")]
+    [Exercise("Day 03: Binary Diagnostic")]
     class D03Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()

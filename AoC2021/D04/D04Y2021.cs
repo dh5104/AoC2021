@@ -7,7 +7,7 @@
     using GlobalUtils;
     using GlobalUtils.Attributes;
 
-    [Exercise("Day 4: Giant Squid")]
+    [Exercise("Day 04: Giant Squid")]
     class D04Y2021 : FileSelectionConsole, IExercise
     {
         public void Execute()
