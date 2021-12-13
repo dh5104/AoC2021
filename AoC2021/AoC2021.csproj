@@ -89,6 +89,9 @@
     <None Update="D11\Data\Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="D12\Data\Example2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="D12\Data\Example1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
