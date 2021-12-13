@@ -25,6 +25,32 @@ namespace GlobalUtils.Spatial
             return grid;
         }
 
+        public static List<List<GenericPoint>> MakeGrid(List<GenericPoint> flatPoints)
+        {
+            List<List<GenericPoint>> grid = new List<List<GenericPoint>>();
+            int newMaxX = flatPoints.Max(p => p.X);
+            int newMinX = flatPoints.Min(p => p.X);
+            int newMaxY = flatPoints.Max(p => p.Y);
+            int newMinY = flatPoints.Min(p => p.Y);
+            for (int y = newMinY; y <= newMaxY; y++)
+            {
+                List<GenericPoint> line = new List<GenericPoint>();
+                for (int x = newMinX; x <= newMaxX; x++)
+                {
+                    line.Add(null);
+                }
+
+                grid.Add(line);
+            }
+
+            foreach (GenericPoint point in flatPoints)
+            {
+                grid[point.Y][point.X] = point;
+            }
+
+            return grid;
+        }
+
         public static void PrintGrid<T>(List<List<T>> points) where T : GenericPoint
         {
             // assumes a fully populated square grid, meaning all the lines have the same contents.
