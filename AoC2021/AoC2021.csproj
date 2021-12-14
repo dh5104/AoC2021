@@ -98,18 +98,6 @@
     <None Update="D12\Data\Input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="D13\Data\ExamplePart2_1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="D13\Data\ExamplePart2_2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="D13\Data\ExamplePart2_3.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="D13\Data\ExamplePart2_4.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="D13\Data\Example1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
